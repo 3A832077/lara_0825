@@ -52,8 +52,14 @@ Route::get('/', function () {
     //Post::destroy(2);
 
     //Post::destroy(3,5,7);
-    $allPosts=Post::all();
-    dd($allPosts);
+    //$allPosts=Post::all();
+    //dd($allPosts);
+    //$featuredPosts=Post::where('is_feature',1)->get();
+    //dd($featuredPosts);
+    $fourthPost=Post::find(4);
+    dd($fourthPost);
+
+
 });
 
 Route::get('posts', [HomeController::class, 'index'])->name('posts.index');
