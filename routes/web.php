@@ -26,6 +26,8 @@ Route::get('/', function () {
         'title'=>'test title',
         'content'=>'test content',
     ]);
+    $posts=Post::all();
+    dd($posts);
 
 });
 
