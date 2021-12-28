@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,6 +73,12 @@ Route::get('/', function () {
         echo $comment->content.'<br>';
     }
 
+    $comment= Comment::find(1);
+    echo $comment->content.'###<br>';
+    $post=$comment->post;
+    echo $post->id.'<br>';
+    echo $post->title.'<br>';
+    echo $post->content.'<br>';
 });
 
 Route::get('posts', [HomeController::class, 'index'])->name('posts.index');
